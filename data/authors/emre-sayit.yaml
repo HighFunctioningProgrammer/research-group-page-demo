@@ -1,0 +1,15 @@
+schema: hugoblox/author/v1
+slug: emre-sayit
+is_owner: false
+name:
+  display: "Emre Sayıt"
+  given: "Emre"
+  family: "Sayıt"
+role: Graduate Student
+weight: 4
+user_groups:
+  - Graduate Students
+links:
+  - icon: brands/linkedin
+    url: "https://www.linkedin.com/in/emre-say%C4%B1t-a0435a213/"
+    label: "LinkedIn"

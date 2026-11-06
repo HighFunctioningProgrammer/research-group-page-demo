@@ -1,0 +1,15 @@
+schema: hugoblox/author/v1
+slug: mustafa-onsoy
+is_owner: false
+name:
+  display: "Mustafa Önsoy"
+  given: "Mustafa"
+  family: "Önsoy"
+role: Graduate Student
+weight: 7
+user_groups:
+  - Graduate Students
+links:
+  - icon: brands/linkedin
+    url: "https://www.linkedin.com/in/mustafa-%C3%B6-573aab244/"
+    label: "LinkedIn"

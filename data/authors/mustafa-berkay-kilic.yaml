@@ -1,0 +1,15 @@
+schema: hugoblox/author/v1
+slug: mustafa-berkay-kilic
+is_owner: false
+name:
+  display: "Mustafa Berkay Kılıç"
+  given: "Mustafa Berkay"
+  family: "Kılıç"
+role: Graduate Student
+weight: 3
+user_groups:
+  - Graduate Students
+links:
+  - icon: brands/linkedin
+    url: "https://www.linkedin.com/in/mustafa-berkay-kilic/"
+    label: "LinkedIn"

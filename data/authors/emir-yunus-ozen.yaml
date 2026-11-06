@@ -1,0 +1,15 @@
+schema: hugoblox/author/v1
+slug: emir-yunus-ozen
+is_owner: false
+name:
+  display: "Emir Yunus Özen"
+  given: "Emir Yunus"
+  family: "Özen"
+role: Undergraduate Student
+weight: 18
+user_groups:
+  - Undergraduate Students
+links:
+  - icon: brands/linkedin
+    url: "https://www.linkedin.com/in/emir-yusuf-%C3%B6zen-bb6b1a225/"
+    label: "LinkedIn"

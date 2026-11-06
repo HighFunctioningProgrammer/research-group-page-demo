@@ -1,0 +1,3 @@
+---
+title: "İsmail Mert Gedik"
+---

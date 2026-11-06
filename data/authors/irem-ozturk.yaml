@@ -1,0 +1,15 @@
+schema: hugoblox/author/v1
+slug: irem-ozturk
+is_owner: false
+name:
+  display: "İrem Öztürk"
+  given: "İrem"
+  family: "Öztürk"
+role: Graduate Student
+weight: 8
+user_groups:
+  - Graduate Students
+links:
+  - icon: brands/linkedin
+    url: "https://www.linkedin.com/in/iremmozturk/"
+    label: "LinkedIn"

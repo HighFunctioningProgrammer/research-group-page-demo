@@ -1,0 +1,15 @@
+schema: hugoblox/author/v1
+slug: enes-ata-unsal
+is_owner: false
+name:
+  display: "Enes Ata Ünsal"
+  given: "Enes Ata"
+  family: "Ünsal"
+role: Graduate Student
+weight: 2
+user_groups:
+  - Graduate Students
+links:
+  - icon: brands/linkedin
+    url: "https://www.linkedin.com/in/enes-ata-unsal/"
+    label: "LinkedIn"

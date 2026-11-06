@@ -1,0 +1,22 @@
+schema: hugoblox/author/v1
+slug: necati-teoman-bahar
+is_owner: false
+name:
+  display: "Necati Teoman Bahar"
+  given: "Necati Teoman"
+  family: "Bahar"
+role: Undergraduate Student
+weight: 10
+user_groups:
+  - Undergraduate Students
+interests:
+  - "Digital Design and Verification"
+  - "RTL Synthesis"
+  - "Analog Electronics"
+links:
+  - icon: brands/linkedin
+    url: "https://www.linkedin.com/in/necati-teoman-bahar/"
+    label: "LinkedIn"
+  - icon: brands/github
+    url: "https://github.com/ProxTheo"
+    label: "GitHub"
