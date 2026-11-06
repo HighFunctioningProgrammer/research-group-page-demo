@@ -17,15 +17,18 @@ sections:
         text: Explore projects
         url: projects/
     design:
-      layout: centered
+      layout: stacked
       alignment: center
-      size: compact
+      size: none
+      spacing:
+        padding: ['clamp(2.5rem, 5vw, 4rem)', '0', '1rem', '0']
   - block: markdown
     id: research
     content:
-      title: Our research
       text: |-
         ![ICBS-LAB team at Middle East Technical University](icbs-team.jpeg)
+
+        ## Our research
 
         We work across integrated circuits, bio-sensors, and energy-aware computing:
 
@@ -33,7 +36,9 @@ sections:
         - **Peripheral nerve systems:** microelectrode arrays for neuromonitoring and electrical stimulation of damaged peripheral nerves.
         - **Neuromorphic hardware:** low-energy spiking neural network architectures using reinforcement learning for pattern recognition at the edge.
     design:
-      columns: '1'
+      css_class: icbs-research
+      spacing:
+        padding: ['2rem', '0', '2.5rem', '0']
   - block: collection
     id: projects
     content:

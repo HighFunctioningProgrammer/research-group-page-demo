@@ -1,0 +1,122 @@
+/* Kit's supported custom stylesheet hook. All colors come from the native
+   METU theme pack; component markup and behavior remain owned by HugoBlox. */
+:root :is(h1, h2, h3, h4) {
+  color: var(--hb-color-foreground);
+}
+
+/* Red 500 passes on white; Kit's lighter 400 is needed for small nav text
+   against the charcoal dark header. Buttons keep their darker red fill. */
+:root.dark .nav-link:is(:hover, .active) {
+  color: var(--color-primary-400);
+}
+
+/* The native hero exposes spacing/layout options, but no heading-size option. */
+#introduction h1 {
+  max-width: 24ch;
+  margin-inline: auto;
+  font-size: clamp(2.125rem, 4.25vw, 3.25rem);
+  line-height: 1.13;
+  letter-spacing: -0.025em;
+  text-wrap: balance;
+}
+
+#introduction .text-lg {
+  max-width: 46rem;
+  font-size: clamp(1.0625rem, 1.5vw, 1.1875rem);
+  line-height: 1.7;
+}
+
+#introduction .mt-10 {
+  margin-top: 1.5rem;
+}
+
+/* The installed Markdown block has no column API. Keep its native image
+   processing and Markdown, and arrange those elements only on the homepage. */
+#research > .flex {
+  width: 100%;
+  max-width: 72rem;
+  align-items: stretch;
+}
+
+#research .prose {
+  max-width: none;
+  font-size: 1.0625rem;
+  line-height: 1.7;
+}
+
+#research .prose > p:empty {
+  display: none;
+}
+
+#research .prose > p:is(:first-child, :has(figure)) {
+  display: contents;
+}
+
+#research figure {
+  margin: 0 0 1.75rem;
+}
+
+#research img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0;
+  border-radius: var(--radius-md, 0.5rem);
+}
+
+#research h2 {
+  margin: 0 0 0.75rem;
+  font-size: clamp(1.75rem, 2.75vw, 2.125rem);
+  line-height: 1.2;
+}
+
+#research .prose > p {
+  margin: 0 0 1rem;
+}
+
+#research ul {
+  margin: 0;
+  padding-left: 1.15rem;
+}
+
+#research li {
+  margin: 0.65rem 0;
+  padding-left: 0.25rem;
+}
+
+#research li::marker {
+  color: var(--color-primary-500);
+}
+
+@media (min-width: 56rem) {
+  #research .prose {
+    display: grid;
+    grid-template-columns: minmax(0, 1.12fr) minmax(0, 1fr);
+    column-gap: clamp(2rem, 5vw, 4rem);
+    align-items: start;
+  }
+
+  #research figure {
+    grid-column: 1;
+    grid-row: 1 / span 3;
+    align-self: center;
+    margin: 0;
+  }
+
+  #research :is(h2, .prose > p, ul) {
+    grid-column: 2;
+  }
+}
+
+/* The MIT license is retained in LICENSE.md. Keep Kit's visible brand credit;
+   omit only its optional template/website-builder marketing button. */
+footer [data-hbx="poweredby_cta"] {
+  display: none;
+}
+
+footer.container {
+  margin-top: 3rem;
+  padding-block: 1.5rem;
+  color: var(--hb-color-footer-fg);
+  background-color: var(--hb-color-footer-bg);
+}

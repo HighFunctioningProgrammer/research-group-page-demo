@@ -1,0 +1,38 @@
+# Native HugoBlox theme pack. Brand colors are centralized here; Kit generates
+# the primary/secondary/neutral scales used by its existing components.
+hugoblox:
+  meta:
+    format: "hugoblox-theme@1"
+    name: "ICBS-LAB · METU"
+    vendor: "ICBS-LAB"
+    version: "1.0.0"
+    license: "MIT"
+  type: dual
+  light:
+    colors:
+      primary: "#E31837"
+      secondary: "#717073"
+      neutral: "#717073"
+    surfaces:
+      background: "#FFFFFF"
+      foreground: "#000000"
+      header:
+        background: "#FFFFFF"
+        foreground: "#000000"
+      footer:
+        background: "#F7F7F7"
+        foreground: "#717073"
+  dark:
+    colors:
+      primary: "#E31837"
+      secondary: "#717073"
+      neutral: "#717073"
+    surfaces:
+      background: "#111112"
+      foreground: "#F5F5F5"
+      header:
+        background: "#111112"
+        foreground: "#F5F5F5"
+      footer:
+        background: "#171718"
+        foreground: "#D4D4D5"
