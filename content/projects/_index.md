@@ -1,22 +1,20 @@
 ---
-title: 'Projects'
-date: 2024-05-19
+title: Projects
 type: landing
-
-# Page sections
 sections:
   - block: collection
     content:
-      title: Selected Projects
-      text: I enjoy making things. Here are a selection of projects that I have worked on over the years.
+      title: Research projects
+      text: Neuronal interfaces, peripheral nerve systems, and energy-aware neuromorphic hardware.
+      count: 0
+      sort_by: weight
+      sort_ascending: true
       filters:
-        folders:
-          - projects
+        folders: [projects]
     design:
       view: article-grid
-      fill_image: false
       columns: 3
       show_date: false
       show_read_time: false
-      show_read_more: false
+      show_read_more: true
 ---

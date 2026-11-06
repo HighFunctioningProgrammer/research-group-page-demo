@@ -1,0 +1,10 @@
+{{ define "main" }}
+  {{/* Keep Kit's native landing renderer and team-showcase. The pinned block
+       hard-codes /authors/ links, which escape GitHub Pages' repository path.
+       Normalize only those links using Hugo's baseURL-aware URL helper. */}}
+  {{ $content := partial "landing_page.html" . }}
+  {{ $authorPrefix := "authors/" | relLangURL }}
+  <div data-pagefind-body>
+    {{ replace $content `href="/authors/` (printf `href="%s` $authorPrefix) | safeHTML }}
+  </div>
+{{ end }}

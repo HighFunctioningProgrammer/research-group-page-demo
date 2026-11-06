@@ -1,0 +1,19 @@
+schema: hugoblox/author/v1
+slug: sena-kandemir
+is_owner: false
+name:
+  display: "Sena Kandemir"
+  given: "Sena"
+  family: "Kandemir"
+role: Undergraduate Student
+weight: 15
+user_groups:
+  - Undergraduate Students
+interests:
+  - "Micro-Electromechanical Systems"
+  - "Solid State Physics"
+  - "Electronic Design"
+links:
+  - icon: brands/linkedin
+    url: "https://www.linkedin.com/in/sena-kandemiir/"
+    label: "LinkedIn"

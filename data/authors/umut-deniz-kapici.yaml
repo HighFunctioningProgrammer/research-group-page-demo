@@ -1,0 +1,15 @@
+schema: hugoblox/author/v1
+slug: umut-deniz-kapici
+is_owner: false
+name:
+  display: "Umut Deniz Kapıcı"
+  given: "Umut Deniz"
+  family: "Kapıcı"
+role: Alumnus
+weight: 19
+user_groups:
+  - Alumni
+links:
+  - icon: brands/linkedin
+    url: "https://www.linkedin.com/in/umut-deniz-kapici/"
+    label: "LinkedIn"

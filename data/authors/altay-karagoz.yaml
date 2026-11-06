@@ -1,0 +1,15 @@
+schema: hugoblox/author/v1
+slug: altay-karagoz
+is_owner: false
+name:
+  display: "Altay Karagöz"
+  given: "Altay"
+  family: "Karagöz"
+role: Undergraduate Student
+weight: 17
+user_groups:
+  - Undergraduate Students
+links:
+  - icon: brands/linkedin
+    url: "https://www.linkedin.com/in/altay-karagoz-b33245280/"
+    label: "LinkedIn"

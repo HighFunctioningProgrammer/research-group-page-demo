@@ -1,0 +1,15 @@
+schema: hugoblox/author/v1
+slug: ismail-mert-gedik
+is_owner: false
+name:
+  display: "İsmail Mert Gedik"
+  given: "İsmail Mert"
+  family: "Gedik"
+role: Graduate Student
+weight: 6
+user_groups:
+  - Graduate Students
+links:
+  - icon: brands/linkedin
+    url: "https://www.linkedin.com/in/ismail-mert-gedik-217bb0241/"
+    label: "LinkedIn"

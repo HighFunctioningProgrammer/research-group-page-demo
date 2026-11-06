@@ -1,0 +1,15 @@
+schema: hugoblox/author/v1
+slug: erkut-kiristioglu
+is_owner: false
+name:
+  display: "Erkut Kırıştıoğlu"
+  given: "Erkut"
+  family: "Kırıştıoğlu"
+role: Undergraduate Student
+weight: 16
+user_groups:
+  - Undergraduate Students
+links:
+  - icon: brands/linkedin
+    url: "https://www.linkedin.com/in/erkutkiristioglu/"
+    label: "LinkedIn"

@@ -1,0 +1,19 @@
+schema: hugoblox/author/v1
+slug: ugur-eroglu
+is_owner: false
+name:
+  display: "Uğur Eroğlu"
+  given: "Uğur"
+  family: "Eroğlu"
+role: Undergraduate Student
+weight: 11
+user_groups:
+  - Undergraduate Students
+interests:
+  - "Computer Architecture"
+  - "Digital Design and Verification"
+  - "Computer Networks"
+links:
+  - icon: brands/linkedin
+    url: "https://www.linkedin.com/in/erogluugur/"
+    label: "LinkedIn"

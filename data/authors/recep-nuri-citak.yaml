@@ -1,0 +1,15 @@
+schema: hugoblox/author/v1
+slug: recep-nuri-citak
+is_owner: false
+name:
+  display: "Recep Nuri Çıtak"
+  given: "Recep Nuri"
+  family: "Çıtak"
+role: Graduate Student
+weight: 5
+user_groups:
+  - Graduate Students
+links:
+  - icon: brands/linkedin
+    url: "https://www.linkedin.com/in/recep-nuri-citak/"
+    label: "LinkedIn"

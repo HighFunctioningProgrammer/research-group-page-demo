@@ -1,0 +1,450 @@
+{
+  "audit_date": "2026-11-06",
+  "source_pages": [
+    "https://icbs-eee.metu.edu.tr/",
+    "https://icbs-eee.metu.edu.tr/members/",
+    "https://icbs-eee.metu.edu.tr/projects/",
+    "https://icbs-eee.metu.edu.tr/publications/"
+  ],
+  "members": [
+    {
+      "name": "Hasan Uluşan",
+      "slug": "hasan-ulusan",
+      "group": "Professor",
+      "portrait": "https://icbs-eee.metu.edu.tr/files/2025/10/hu.jpg",
+      "links": [
+        "https://scholar.google.com.tr/citations?user=BvQm0BgAAAAJ",
+        "https://www.linkedin.com/in/hasanulusan/"
+      ],
+      "interests": [],
+      "target_data": "data/authors/hasan-ulusan.yaml",
+      "target_profile": "content/authors/hasan-ulusan/_index.md"
+    },
+    {
+      "name": "Enes Ata Ünsal",
+      "slug": "enes-ata-unsal",
+      "group": "Graduate Students",
+      "portrait": "https://icbs-eee.metu.edu.tr/files/2025/11/eau.jpeg",
+      "links": [
+        "https://www.linkedin.com/in/enes-ata-unsal/"
+      ],
+      "interests": [],
+      "target_data": "data/authors/enes-ata-unsal.yaml",
+      "target_profile": "content/authors/enes-ata-unsal/_index.md"
+    },
+    {
+      "name": "Mustafa Berkay Kılıç",
+      "slug": "mustafa-berkay-kilic",
+      "group": "Graduate Students",
+      "portrait": "https://icbs-eee.metu.edu.tr/files/2025/11/mbk.jpeg",
+      "links": [
+        "https://www.linkedin.com/in/mustafa-berkay-kilic/"
+      ],
+      "interests": [],
+      "target_data": "data/authors/mustafa-berkay-kilic.yaml",
+      "target_profile": "content/authors/mustafa-berkay-kilic/_index.md"
+    },
+    {
+      "name": "Emre Sayıt",
+      "slug": "emre-sayit",
+      "group": "Graduate Students",
+      "portrait": "https://icbs-eee.metu.edu.tr/files/2025/10/es.jpg",
+      "links": [
+        "https://www.linkedin.com/in/emre-say%C4%B1t-a0435a213/"
+      ],
+      "interests": [],
+      "target_data": "data/authors/emre-sayit.yaml",
+      "target_profile": "content/authors/emre-sayit/_index.md"
+    },
+    {
+      "name": "Recep Nuri Çıtak",
+      "slug": "recep-nuri-citak",
+      "group": "Graduate Students",
+      "portrait": "https://icbs-eee.metu.edu.tr/files/2025/10/rnc.jpg",
+      "links": [
+        "https://www.linkedin.com/in/recep-nuri-citak/"
+      ],
+      "interests": [],
+      "target_data": "data/authors/recep-nuri-citak.yaml",
+      "target_profile": "content/authors/recep-nuri-citak/_index.md"
+    },
+    {
+      "name": "İsmail Mert Gedik",
+      "slug": "ismail-mert-gedik",
+      "group": "Graduate Students",
+      "portrait": "https://icbs-eee.metu.edu.tr/files/2025/10/img.jpg",
+      "links": [
+        "https://www.linkedin.com/in/ismail-mert-gedik-217bb0241/"
+      ],
+      "interests": [],
+      "target_data": "data/authors/ismail-mert-gedik.yaml",
+      "target_profile": "content/authors/ismail-mert-gedik/_index.md"
+    },
+    {
+      "name": "Mustafa Önsoy",
+      "slug": "mustafa-onsoy",
+      "group": "Graduate Students",
+      "portrait": "https://icbs-eee.metu.edu.tr/files/2026/01/mo.jpg",
+      "links": [
+        "https://www.linkedin.com/in/mustafa-%C3%B6-573aab244/"
+      ],
+      "interests": [],
+      "target_data": "data/authors/mustafa-onsoy.yaml",
+      "target_profile": "content/authors/mustafa-onsoy/_index.md"
+    },
+    {
+      "name": "İrem Öztürk",
+      "slug": "irem-ozturk",
+      "group": "Graduate Students",
+      "portrait": "https://icbs-eee.metu.edu.tr/files/2026/02/IO.jpeg",
+      "links": [
+        "https://www.linkedin.com/in/iremmozturk/"
+      ],
+      "interests": [],
+      "target_data": "data/authors/irem-ozturk.yaml",
+      "target_profile": "content/authors/irem-ozturk/_index.md"
+    },
+    {
+      "name": "Emre Ant",
+      "slug": "emre-ant",
+      "group": "Graduate Students",
+      "portrait": "https://icbs-eee.metu.edu.tr/files/2026/05/ea.jpeg",
+      "links": [
+        "https://www.linkedin.com/in/emre-ant/"
+      ],
+      "interests": [],
+      "target_data": "data/authors/emre-ant.yaml",
+      "target_profile": "content/authors/emre-ant/_index.md"
+    },
+    {
+      "name": "Necati Teoman Bahar",
+      "slug": "necati-teoman-bahar",
+      "group": "Undergraduate Students",
+      "portrait": "https://icbs-eee.metu.edu.tr/files/2025/10/ntb.jpg",
+      "links": [
+        "https://www.linkedin.com/in/necati-teoman-bahar/",
+        "https://github.com/ProxTheo"
+      ],
+      "interests": [
+        "Digital Design and Verification",
+        "RTL Synthesis",
+        "Analog Electronics"
+      ],
+      "target_data": "data/authors/necati-teoman-bahar.yaml",
+      "target_profile": "content/authors/necati-teoman-bahar/_index.md"
+    },
+    {
+      "name": "Uğur Eroğlu",
+      "slug": "ugur-eroglu",
+      "group": "Undergraduate Students",
+      "portrait": "https://icbs-eee.metu.edu.tr/files/2025/10/ue.jpg",
+      "links": [
+        "https://www.linkedin.com/in/erogluugur/"
+      ],
+      "interests": [
+        "Computer Architecture",
+        "Digital Design and Verification",
+        "Computer Networks"
+      ],
+      "target_data": "data/authors/ugur-eroglu.yaml",
+      "target_profile": "content/authors/ugur-eroglu/_index.md"
+    },
+    {
+      "name": "Agahan Işıksever",
+      "slug": "agahan-isiksever",
+      "group": "Undergraduate Students",
+      "portrait": "https://icbs-eee.metu.edu.tr/files/2025/10/ai.jpg",
+      "links": [
+        "https://www.linkedin.com/in/agahan-isiksever/"
+      ],
+      "interests": [],
+      "target_data": "data/authors/agahan-isiksever.yaml",
+      "target_profile": "content/authors/agahan-isiksever/_index.md"
+    },
+    {
+      "name": "Ata Barış Yılmaz",
+      "slug": "ata-baris-yilmaz",
+      "group": "Undergraduate Students",
+      "portrait": "https://icbs-eee.metu.edu.tr/files/2025/10/aby.jpeg",
+      "links": [
+        "https://www.linkedin.com/in/ata-bar%C4%B1%C5%9F-y%C4%B1lmaz-6806a32b7/"
+      ],
+      "interests": [],
+      "target_data": "data/authors/ata-baris-yilmaz.yaml",
+      "target_profile": "content/authors/ata-baris-yilmaz/_index.md"
+    },
+    {
+      "name": "Ömer Faruk Özmermer",
+      "slug": "omer-faruk-ozmermer",
+      "group": "Undergraduate Students",
+      "portrait": "https://icbs-eee.metu.edu.tr/files/2025/10/ofo.jpg",
+      "links": [
+        "https://www.linkedin.com/in/%C3%B6mer-faruk-%C3%B6zmermer-541b45202/"
+      ],
+      "interests": [],
+      "target_data": "data/authors/omer-faruk-ozmermer.yaml",
+      "target_profile": "content/authors/omer-faruk-ozmermer/_index.md"
+    },
+    {
+      "name": "Sena Kandemir",
+      "slug": "sena-kandemir",
+      "group": "Undergraduate Students",
+      "portrait": "https://icbs-eee.metu.edu.tr/files/2026/01/sk2.jpg",
+      "links": [
+        "https://www.linkedin.com/in/sena-kandemiir/"
+      ],
+      "interests": [
+        "Micro-Electromechanical Systems",
+        "Solid State Physics",
+        "Electronic Design"
+      ],
+      "target_data": "data/authors/sena-kandemir.yaml",
+      "target_profile": "content/authors/sena-kandemir/_index.md"
+    },
+    {
+      "name": "Erkut Kırıştıoğlu",
+      "slug": "erkut-kiristioglu",
+      "group": "Undergraduate Students",
+      "portrait": "https://icbs-eee.metu.edu.tr/files/2026/01/ek.jpg",
+      "links": [
+        "https://www.linkedin.com/in/erkutkiristioglu/"
+      ],
+      "interests": [],
+      "target_data": "data/authors/erkut-kiristioglu.yaml",
+      "target_profile": "content/authors/erkut-kiristioglu/_index.md"
+    },
+    {
+      "name": "Altay Karagöz",
+      "slug": "altay-karagoz",
+      "group": "Undergraduate Students",
+      "portrait": "https://icbs-eee.metu.edu.tr/files/2026/01/ak.jpg",
+      "links": [
+        "https://www.linkedin.com/in/altay-karagoz-b33245280/"
+      ],
+      "interests": [],
+      "target_data": "data/authors/altay-karagoz.yaml",
+      "target_profile": "content/authors/altay-karagoz/_index.md"
+    },
+    {
+      "name": "Emir Yunus Özen",
+      "slug": "emir-yunus-ozen",
+      "group": "Undergraduate Students",
+      "portrait": "https://icbs-eee.metu.edu.tr/files/2026/01/eyo.jpg",
+      "links": [
+        "https://www.linkedin.com/in/emir-yusuf-%C3%B6zen-bb6b1a225/"
+      ],
+      "interests": [],
+      "target_data": "data/authors/emir-yunus-ozen.yaml",
+      "target_profile": "content/authors/emir-yunus-ozen/_index.md"
+    },
+    {
+      "name": "Umut Deniz Kapıcı",
+      "slug": "umut-deniz-kapici",
+      "group": "Alumni",
+      "portrait": "https://icbs-eee.metu.edu.tr/files/2025/10/udk.jpg",
+      "links": [
+        "https://www.linkedin.com/in/umut-deniz-kapici/"
+      ],
+      "interests": [],
+      "target_data": "data/authors/umut-deniz-kapici.yaml",
+      "target_profile": "content/authors/umut-deniz-kapici/_index.md"
+    }
+  ],
+  "projects": [
+    {
+      "title": "NeuroMop",
+      "source": "https://icbs-eee.metu.edu.tr/projects/",
+      "target": "content/projects/neuromop/index.md",
+      "description": "Neuronal Signal Monitoring and Modulation Platform (NeuroMoP) is the first project of ICBS, aiming to develop an integrated in vivo system with the capability of detecting multi-thousand neuronal signals, and modulating the neurons using electrical stimulations, where it is targeted to study neurological diseases, their treatment methods, and complex neuronal behavior like plasticity. For this purpose, the scope of the project includes the design, implementation, and verification of the low-power mixed-signal ASIC with an active-pixel-based recording and the microelectrode arrays. The project is funded by the TÜBİTAK 2232-B program."
+    },
+    {
+      "title": "PeriFiks",
+      "source": "https://icbs-eee.metu.edu.tr/projects/",
+      "target": "content/projects/perifiks/index.md",
+      "description": "Current methods used in the treatment of peripheral nerve injuries (PNI) often provide limited effectiveness and fail to achieve permanent recovery. The PeriFiks Project offers an innovative approach to PNI treatment by developing a new generation of MEMS-based micro biosensors and stimulation systems with micro-scale, high-precision, and wireless capabilities. This approach provides advantages such as higher spatial selectivity, low impedance, long-term stability, and biocompatibility. Unlike existing technologies, this project proposes the use of flexible and biocompatible materials, optimized for intrafascicular placement. PeriFiks demonstrates innovative potential in PNI rehabilitation with features such as high signal-to-noise ratio, low impedance, spatial selectivity, and wireless power and data transmission. Within the scope of PeriFiks, MEMS-based microelectrode arrays will be developed and integrated with a closed-loop stimulation and recording system. The closed-loop stimulation and recording system will be developed with a structure incorporating an analog front-end and a wireless communication module. This system will be tested in ex-vivo animal models to evaluate both detailed analysis of afferent and efferent nerve activities and placement stability."
+    },
+    {
+      "title": "Bio-Inspired Energy-Aware SNN Architecture with Reinforcement Learning",
+      "source": "https://icbs-eee.metu.edu.tr/projects/",
+      "target": "content/projects/energy-aware-snn/index.md",
+      "description": "Bio-inspired Spiking Neural Networks (SNNs) offer potential for scaling to pattern recognition tasks while accommodating low-cost applications. By adapting SNNs to reinforcement learning (RL) schemes, new development avenues open for energy-aware structures. This work employs a real-time RL system with a SNN core for MNIST classification. The proposed architecture enhances a previously developed simple binary decision-making 5-bit integer hardware architecture to handle more complex image recognition tasks at the edge, while maintaining its energy efficiency and high learning accuracy. Although the clock frequency (45 MHz) and dynamic power dissipation (270 mW) scale as expected with network growth on an Intel MAX 10 10M50DAF256C8GES FPGA, the number of cycles for a learning or classifying operation does not change significantly, demonstrating the multi-cycle architecture’s favorable scaling characteristics for low-energy classification problems."
+    }
+  ],
+  "publications": [
+    {
+      "title": "Low-Energy Real-Time Self-Organizing Classifier Architecture for Edge SNN Applications",
+      "authors": [
+        "Uğur Eroğlu",
+        "Necati Teoman Bahar",
+        "Hasan Uluşan",
+        "Ali Muhtaroglu"
+      ],
+      "date": "2025-12-14",
+      "venue": "2025 37th International Conference on Microelectronics (ICM)",
+      "pages": "1-6",
+      "location": "Cairo, Egypt",
+      "doi": "10.1109/icm66518.2025.11322489",
+      "metadata_source": "https://api.crossref.org/works/10.1109/icm66518.2025.11322489",
+      "target": "content/publications/edge-snn-classifier/index.md"
+    },
+    {
+      "title": "A Low-Energy Spiking Neural Network Architecture for Reinforcement Learning toward Classification Tasks at the Edge",
+      "authors": [
+        "Necati Teoman Bahar",
+        "Joshua Ifeanyi Okonkwo",
+        "Hasan Uluşan",
+        "Ali Muhtaroglu"
+      ],
+      "date": "2025-05-25",
+      "venue": "2025 IEEE International Symposium on Circuits and Systems (ISCAS)",
+      "pages": "1-5",
+      "location": "London, United Kingdom",
+      "doi": "10.1109/iscas56072.2025.11043569",
+      "metadata_source": "https://api.crossref.org/works/10.1109/iscas56072.2025.11043569",
+      "target": "content/publications/reinforcement-learning-snn/index.md"
+    }
+  ],
+  "assets": [
+    {
+      "url": "https://icbs-eee.metu.edu.tr/files/2025/10/hu.jpg",
+      "target": "assets/media/authors/hasan-ulusan.jpg",
+      "bytes": 50204,
+      "status": 200,
+      "sha256": "6a3917322bef74d61e92294f28fb319dc29e4d4f9e3cfbf5577edcf93afb9643"
+    },
+    {
+      "url": "https://icbs-eee.metu.edu.tr/files/2025/11/eau.jpeg",
+      "target": "assets/media/authors/enes-ata-unsal.jpeg",
+      "bytes": 30790,
+      "status": 200,
+      "sha256": "cd3e050f852963fe0ace640f85562f276f593b0acf7faa2f432a118483eb91bf"
+    },
+    {
+      "url": "https://icbs-eee.metu.edu.tr/files/2025/11/mbk.jpeg",
+      "target": "assets/media/authors/mustafa-berkay-kilic.jpeg",
+      "bytes": 36337,
+      "status": 200,
+      "sha256": "4af6ef2564345cbba562f465233d053dcbb7a26ee89312a61b07cfccd8a2441e"
+    },
+    {
+      "url": "https://icbs-eee.metu.edu.tr/files/2025/10/es.jpg",
+      "target": "assets/media/authors/emre-sayit.jpg",
+      "bytes": 41089,
+      "status": 200,
+      "sha256": "0ab5595428d82a55cfc30d5700ba4da9c61d2c4d4a61edb2fe2c3e519ebb4ca8"
+    },
+    {
+      "url": "https://icbs-eee.metu.edu.tr/files/2025/10/rnc.jpg",
+      "target": "assets/media/authors/recep-nuri-citak.jpg",
+      "bytes": 74822,
+      "status": 200,
+      "sha256": "cd6261b5b63975e95deb33d0e3fd2135c19ce75164d34c7ad6bf1623d576ae3b"
+    },
+    {
+      "url": "https://icbs-eee.metu.edu.tr/files/2025/10/img.jpg",
+      "target": "assets/media/authors/ismail-mert-gedik.jpg",
+      "bytes": 68624,
+      "status": 200,
+      "sha256": "3d26dec6586e00d04868053d060ffaedc1ad87c690987e64fd860f7bc7704392"
+    },
+    {
+      "url": "https://icbs-eee.metu.edu.tr/files/2026/01/mo.jpg",
+      "target": "assets/media/authors/mustafa-onsoy.jpg",
+      "bytes": 127169,
+      "status": 200,
+      "sha256": "dac61455a8ec88187500d04c52858177ce1e9ecbb413078e88359e97cf57e46f"
+    },
+    {
+      "url": "https://icbs-eee.metu.edu.tr/files/2026/02/IO.jpeg",
+      "target": "assets/media/authors/irem-ozturk.jpeg",
+      "bytes": 244570,
+      "status": 200,
+      "sha256": "006f833f9e7ec3c9e54155b4913fd608a0fc8491c4d44bce2f3e265f377a0aa4"
+    },
+    {
+      "url": "https://icbs-eee.metu.edu.tr/files/2026/05/ea.jpeg",
+      "target": "assets/media/authors/emre-ant.jpeg",
+      "bytes": 757196,
+      "status": 200,
+      "sha256": "2c4400895afb7a2156f81a065e50eedb2865f3f23ac4fff819129e953ed0356d"
+    },
+    {
+      "url": "https://icbs-eee.metu.edu.tr/files/2025/10/ntb.jpg",
+      "target": "assets/media/authors/necati-teoman-bahar.jpg",
+      "bytes": 57105,
+      "status": 200,
+      "sha256": "bb79d833c1f650e970a91cb6cb357a56410dcbfefa200c334d9c0365355b9dd9"
+    },
+    {
+      "url": "https://icbs-eee.metu.edu.tr/files/2025/10/ue.jpg",
+      "target": "assets/media/authors/ugur-eroglu.jpg",
+      "bytes": 150093,
+      "status": 200,
+      "sha256": "78924b47ca77654d7338812b92102eca9e70c2c060e85a4c8e87744df63792bd"
+    },
+    {
+      "url": "https://icbs-eee.metu.edu.tr/files/2025/10/ai.jpg",
+      "target": "assets/media/authors/agahan-isiksever.jpg",
+      "bytes": 39305,
+      "status": 200,
+      "sha256": "93392e018c6362ab13a84e43f77fcbd88291cb43b481507add03dab865e4e8fb"
+    },
+    {
+      "url": "https://icbs-eee.metu.edu.tr/files/2025/10/aby.jpeg",
+      "target": "assets/media/authors/ata-baris-yilmaz.jpeg",
+      "bytes": 75947,
+      "status": 200,
+      "sha256": "954cb259ed073b6014999c088c5882cf7886d57c47c43646afe685dbefe539ab"
+    },
+    {
+      "url": "https://icbs-eee.metu.edu.tr/files/2025/10/ofo.jpg",
+      "target": "assets/media/authors/omer-faruk-ozmermer.jpg",
+      "bytes": 112530,
+      "status": 200,
+      "sha256": "8d1202472f09f8feae076148f6888a4a5575c429ca88d37edd843560db23c9c7"
+    },
+    {
+      "url": "https://icbs-eee.metu.edu.tr/files/2026/01/sk2.jpg",
+      "target": "assets/media/authors/sena-kandemir.jpg",
+      "bytes": 91073,
+      "status": 200,
+      "sha256": "30d628f7821c152b083cd2414719f154a161c2c9a864c4210f25c4ae500b4a05"
+    },
+    {
+      "url": "https://icbs-eee.metu.edu.tr/files/2026/01/ek.jpg",
+      "target": "assets/media/authors/erkut-kiristioglu.jpg",
+      "bytes": 86333,
+      "status": 200,
+      "sha256": "2d428f5252c09631db363ee33ec90f451ab7a44e97f699a7b4a29194f46c9d9a"
+    },
+    {
+      "url": "https://icbs-eee.metu.edu.tr/files/2026/01/ak.jpg",
+      "target": "assets/media/authors/altay-karagoz.jpg",
+      "bytes": 153319,
+      "status": 200,
+      "sha256": "74cffb274b34ec95b44d96d13a74544b3ac4e58c8a009fd833841c0b9eb1e805"
+    },
+    {
+      "url": "https://icbs-eee.metu.edu.tr/files/2026/01/eyo.jpg",
+      "target": "assets/media/authors/emir-yunus-ozen.jpg",
+      "bytes": 76325,
+      "status": 200,
+      "sha256": "e480abb904a11bc2dd3a0213730d82f29cfda020715b3241ec71cb8f6bfa8789"
+    },
+    {
+      "url": "https://icbs-eee.metu.edu.tr/files/2025/10/udk.jpg",
+      "target": "assets/media/authors/umut-deniz-kapici.jpg",
+      "bytes": 31088,
+      "status": 200,
+      "sha256": "f3ae946d69e9d3fa509b5253ca99d78d8650cfaa94f1cd554cc2cc03b5f2f332"
+    },
+    {
+      "url": "https://icbs-eee.metu.edu.tr/files/2025/10/people.jpeg",
+      "target": "assets/media/icbs-team.jpeg",
+      "bytes": 51782,
+      "status": 200,
+      "sha256": "ae75b53709d006c07d09e045adf58df27afee9538abd1de28bd9fc4730367210"
+    }
+  ],
+  "faculty_contact_source": "https://eee.metu.edu.tr/index.php/tr/personel/hasan-ulusan"
+}
