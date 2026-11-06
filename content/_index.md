@@ -26,7 +26,7 @@ sections:
     id: research
     content:
       text: |-
-        ![ICBS-LAB team at Middle East Technical University](icbs-team.jpeg)
+        ![ICBS-LAB team at Middle East Technical University](icbs-team-group.jpeg)
 
         ## Our research
 
