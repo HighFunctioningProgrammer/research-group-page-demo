@@ -1,0 +1,13 @@
+slug: pepe-king-prawn
+schema: hugoblox/author/v1
+is_owner: false
+name:
+  display: Pepe
+  given: King
+  family: Prawn
+role: New Member Trial
+user_groups:
+  - Undergraduate Students
+cms:
+  avatar: /authors/mw6w4sxn-nccdsz6c.jpg
+weight: 100
