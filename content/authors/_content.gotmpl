@@ -1,0 +1,7 @@
+{{/* New CMS people need a native author term page even without publications.
+     Keep existing physical stubs and their URLs. No parallel content store. */}}
+{{ range $slug, $person := hugo.Data.authors }}
+  {{ if not (fileExists (printf "content/authors/%s/_index.md" $slug)) }}
+    {{ $.AddPage (dict "kind" "term" "path" $slug "title" $person.name.display) }}
+  {{ end }}
+{{ end }}

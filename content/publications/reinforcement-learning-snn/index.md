@@ -1,10 +1,12 @@
 ---
+cms_slug: reinforcement-learning-snn
+draft: false
 title: "A Low-Energy Spiking Neural Network Architecture for Reinforcement Learning toward Classification Tasks at the Edge"
 authors:
   - "necati-teoman-bahar"
-  - "Joshua Ifeanyi Okonkwo"
+  - "joshua-ifeanyi-okonkwo"
   - "hasan-ulusan"
-  - "Ali Muhtaroglu"
+  - "ali-muhtaroglu"
 date: "2025-05-25"
 publication_types: [paper-conference]
 publication:

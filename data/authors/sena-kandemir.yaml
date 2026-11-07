@@ -17,3 +17,5 @@ links:
   - icon: brands/linkedin
     url: "https://www.linkedin.com/in/sena-kandemiir/"
     label: "LinkedIn"
+cms:
+  avatar: /authors/sena-kandemir.jpg

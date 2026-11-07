@@ -13,3 +13,5 @@ links:
   - icon: brands/linkedin
     url: "https://www.linkedin.com/in/enes-ata-unsal/"
     label: "LinkedIn"
+cms:
+  avatar: /authors/enes-ata-unsal.jpeg

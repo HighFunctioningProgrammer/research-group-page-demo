@@ -13,3 +13,5 @@ links:
   - icon: brands/linkedin
     url: "https://www.linkedin.com/in/agahan-isiksever/"
     label: "LinkedIn"
+cms:
+  avatar: /authors/agahan-isiksever.jpg

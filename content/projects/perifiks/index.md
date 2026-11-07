@@ -1,4 +1,6 @@
 ---
+cms_slug: perifiks
+draft: false
 title: "PeriFiks"
 summary: "MEMS-based microelectrode arrays and closed-loop recording and stimulation for peripheral nerve injuries."
 weight: 2

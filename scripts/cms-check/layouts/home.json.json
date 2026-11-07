@@ -1,0 +1,100 @@
+{{- $config := (resources.Get "cms-config.yaml").Content | transform.Unmarshal (dict "format" "yaml") -}}
+{{- $snapshotOnly := eq (os.Getenv "HUGO_CMS_SNAPSHOT_ONLY") "1" -}}
+{{- if not $snapshotOnly -}}
+{{- if not $config.settings.content.merge -}}{{ errorf "CMS: settings.content.merge must remain true" }}{{- end -}}
+{{- range $collection := $config.content -}}
+  {{- if or $collection.operations.delete $collection.operations.rename -}}
+    {{- errorf "CMS: destructive operations must remain disabled for %s" $collection.name -}}
+  {{- end -}}
+{{- end -}}
+{{- end -}}
+{{- $people := hugo.Data.authors -}}
+{{- $groups := slice "Professor" "Graduate Students" "Undergraduate Students" "Alumni" "External co-authors" -}}
+{{- if not $snapshotOnly -}}
+{{- range $id, $person := $people -}}
+  {{- if or (ne $id $person.slug) (not (findRE `^[a-z0-9]+(-[a-z0-9]+)*$` $id)) -}}
+    {{- errorf "CMS: person identifier must match filename: %s" $id -}}
+  {{- end -}}
+  {{- if not $person.name.display -}}{{- errorf "CMS: person %s needs a full name" $id -}}{{- end -}}
+  {{- if ne (len ($person.user_groups | default slice)) 1 -}}
+    {{- errorf "CMS: person %s must have exactly one category" $id -}}
+  {{- end -}}
+  {{- range $person.user_groups -}}
+    {{- if not (in $groups .) -}}{{- errorf "CMS: invalid category %s for %s" . $id -}}{{- end -}}
+  {{- end -}}
+  {{- with $person.cms.avatar -}}
+    {{- partial "image" (dict "path" . "owner" $id) -}}
+  {{- end -}}
+  {{- range $person.links -}}
+    {{- $valid := findRE `^https?://\S+$` .url -}}
+    {{- if eq .icon "at-symbol" -}}{{- $valid = findRE `^(mailto:)?[^\s@]+@[^\s@]+\.[^\s@]+$` .url -}}{{- end -}}
+    {{- if not $valid -}}{{- errorf "CMS: invalid contact/social link for %s: %s" $id .url -}}{{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- end -}}
+{{- $pages := slice -}}
+{{- range site.RegularPages -}}
+  {{- $page := . -}}
+  {{- if and (not $snapshotOnly) (in (slice "projects" "publications" "news") .Section) -}}
+    {{- $expected := path.Base (path.Dir .File.Path) -}}
+    {{- if or (ne $expected .Params.cms_slug) (ne .File.LogicalName "index.md") (not (findRE `^[a-z0-9]+(-[a-z0-9]+)*$` .Params.cms_slug)) -}}
+      {{- errorf "CMS: identifier must match bundle folder: %s" .File.Path -}}
+    {{- end -}}
+    {{- with .Params.slug -}}
+      {{- if ne . $expected -}}{{- errorf "CMS: URL override conflicts with stable identifier: %s" $page.File.Path -}}{{- end -}}
+    {{- end -}}
+    {{- if not .Title -}}{{- errorf "CMS: title is required in %s" .File.Path -}}{{- end -}}
+    {{- if and (eq .Section "projects") (not .Params.summary) -}}{{- errorf "CMS: project summary is required in %s" .File.Path -}}{{- end -}}
+    {{- if eq .Section "publications" -}}
+      {{- if or (not .Params.authors) (not .Params.publication.name) (eq (.Date.Format "2006") "0001") -}}
+        {{- errorf "CMS: publication needs ordered authors, venue and a verified date: %s" .File.Path -}}
+      {{- end -}}
+      {{- with .Params.hugoblox.ids.doi -}}
+        {{- if not (findRE `^10\.\d{4,9}/\S+$` .) -}}{{- errorf "CMS: invalid DOI in %s" $page.File.Path -}}{{- end -}}
+      {{- end -}}
+    {{- end -}}
+    {{- range .Params.authors -}}
+      {{- if not (index $people .) -}}{{- errorf "CMS: unknown author %s in %s" . $page.File.Path -}}{{- end -}}
+    {{- end -}}
+    {{- range .Params.projects -}}
+      {{- if not (site.GetPage (printf "/projects/%s" .)) -}}{{- errorf "CMS: unknown project %s in %s" . $page.File.Path -}}{{- end -}}
+    {{- end -}}
+    {{- range .Params.publications -}}
+      {{- if not (site.GetPage (printf "/publications/%s" .)) -}}{{- errorf "CMS: unknown publication %s in %s" . $page.File.Path -}}{{- end -}}
+    {{- end -}}
+    {{- with .Params.image.filename -}}{{- partial "image" (dict "path" . "owner" $page.File.Path "page" $page) -}}{{- end -}}
+    {{- range findRESubmatch `!\[[^\]]*\]\(([^\s)]+)(?:\s+"[^"]*")?\)` .RawContent -}}
+      {{- if not (findRE `^https?://` (index . 1)) -}}
+        {{- partial "image" (dict "path" (index . 1) "owner" $page.File.Path "page" $page) -}}
+      {{- end -}}
+    {{- end -}}
+    {{- range .Params.links -}}
+      {{- if not (findRE `^https?://` .url) -}}
+        {{- if or (findRE `(^/|\.\.)` .url) (not (resources.Get (path.Join "cms-static" .url))) -}}
+          {{- errorf "CMS: missing or unsafe local attachment %s in %s" .url $page.File.Path -}}
+        {{- end -}}
+      {{- end -}}
+    {{- end -}}
+    {{- with .Params.cms.pdf -}}
+      {{- if or (not (findRE `^uploads/publications/[^\s]+\.pdf$` .)) (findRE `\.\.` .) (not (resources.Get (path.Join "cms-static" .))) -}}
+        {{- errorf "CMS: missing or unsafe PDF %s in %s" . $page.File.Path -}}
+      {{- end -}}
+    {{- end -}}
+    {{- with .Params.bibtex -}}
+      {{- if not (findRE `(?s)^\s*@\w+\s*[{(].+` .) -}}{{- errorf "CMS: invalid BibTeX in %s" $page.File.Path -}}{{- end -}}
+    {{- end -}}
+    {{- if and (eq .Section "news") (not .Draft) -}}{{- errorf "CMS: News is draft-only until a separate launch review" -}}{{- end -}}
+  {{- end -}}
+  {{- $pages = $pages | append (dict "path" .File.Path "section" .Section "title" .Title "draft" .Draft "params" .Params "body" .RawContent) -}}
+{{- end -}}
+{{- if not $snapshotOnly -}}{{- partial "image" (dict "path" hugo.Data.site.home.team_photo "owner" "Homepage photograph") -}}{{- end -}}
+{{- if not $snapshotOnly -}}
+  {{- range $key := slice "headline" "introduction" "team_photo_alt" "research_heading" "research_introduction" "neuronal_interfaces" "peripheral_nerve_systems" "neuromorphic_hardware" -}}
+    {{- if not (index hugo.Data.site.home $key) -}}{{- errorf "CMS: missing homepage field %s" $key -}}{{- end -}}
+  {{- end -}}
+  {{- $contact := hugo.Data.site.contact -}}
+  {{- if or (not $contact.person) (not $contact.role) (not $contact.address) (not (findRE `^[^\s@]+@[^\s@]+\.[^\s@]+$` $contact.email)) (not (findRE `^https://\S+$` $contact.source_url)) -}}
+    {{- errorf "CMS: contact needs a person, role, address, valid email and official source URL" -}}
+  {{- end -}}
+{{- end -}}
+{{- dict "people" $people "pages" $pages "site" hugo.Data.site "config" $config | jsonify -}}

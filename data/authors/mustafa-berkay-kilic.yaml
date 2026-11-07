@@ -13,3 +13,5 @@ links:
   - icon: brands/linkedin
     url: "https://www.linkedin.com/in/mustafa-berkay-kilic/"
     label: "LinkedIn"
+cms:
+  avatar: /authors/mustafa-berkay-kilic.jpeg

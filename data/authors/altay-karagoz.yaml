@@ -13,3 +13,5 @@ links:
   - icon: brands/linkedin
     url: "https://www.linkedin.com/in/altay-karagoz-b33245280/"
     label: "LinkedIn"
+cms:
+  avatar: /authors/altay-karagoz.jpg

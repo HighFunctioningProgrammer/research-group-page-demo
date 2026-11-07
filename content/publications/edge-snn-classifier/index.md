@@ -1,10 +1,12 @@
 ---
+cms_slug: edge-snn-classifier
+draft: false
 title: "Low-Energy Real-Time Self-Organizing Classifier Architecture for Edge SNN Applications"
 authors:
   - "ugur-eroglu"
   - "necati-teoman-bahar"
   - "hasan-ulusan"
-  - "Ali Muhtaroglu"
+  - "ali-muhtaroglu"
 date: "2025-12-14"
 publication_types: [paper-conference]
 publication:

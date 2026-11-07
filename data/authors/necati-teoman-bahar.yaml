@@ -20,3 +20,5 @@ links:
   - icon: brands/github
     url: "https://github.com/ProxTheo"
     label: "GitHub"
+cms:
+  avatar: /authors/necati-teoman-bahar.jpg

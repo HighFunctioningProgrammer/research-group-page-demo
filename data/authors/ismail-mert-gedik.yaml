@@ -13,3 +13,5 @@ links:
   - icon: brands/linkedin
     url: "https://www.linkedin.com/in/ismail-mert-gedik-217bb0241/"
     label: "LinkedIn"
+cms:
+  avatar: /authors/ismail-mert-gedik.jpg

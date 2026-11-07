@@ -17,3 +17,5 @@ links:
   - icon: brands/linkedin
     url: "https://www.linkedin.com/in/erogluugur/"
     label: "LinkedIn"
+cms:
+  avatar: /authors/ugur-eroglu.jpg

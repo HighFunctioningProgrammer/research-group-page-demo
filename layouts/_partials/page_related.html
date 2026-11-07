@@ -1,0 +1,37 @@
+{{/* Show related/recommended content. */}}
+{{/* CMS extension: explicit papers keep their order; newly linked papers follow. */}}
+{{ if eq .Section "projects" }}
+  {{ $papers := slice }}
+  {{ $seen := slice }}
+  {{ range .Params.publications }}
+    {{ with site.GetPage (printf "/publications/%s" .) }}
+      {{ $papers = $papers | append . }}
+      {{ $seen = $seen | append .RelPermalink }}
+    {{ end }}
+  {{ end }}
+  {{ $projectID := .Params.cms_slug }}
+  {{ range (where site.RegularPages "Section" "publications").ByDate.Reverse }}
+    {{ if and (in .Params.projects $projectID) (not (in $seen .RelPermalink)) }}
+      {{ $papers = $papers | append . }}
+      {{ $seen = $seen | append .RelPermalink }}
+    {{ end }}
+  {{ end }}
+  {{ with $papers }}
+    <h2>Related publications</h2>
+    <ul>{{ range . }}<li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>{{ end }}</ul>
+  {{ end }}
+{{ end }}
+{{ if .Params.show_related }}
+  {{ $related := site.RegularPages.Related . | first 5 }}
+  {{ with $related }}
+<hr class="border-dotted border-neutral-300 dark:border-neutral-600">
+  <div class="text-sm">
+    <h3>{{ i18n "related" }}</h3>
+    <ul>
+      {{ range . }}
+      <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+      {{ end }}
+    </ul>
+  </div>
+  {{ end }}
+{{ end }}

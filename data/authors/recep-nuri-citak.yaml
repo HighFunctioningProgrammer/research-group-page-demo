@@ -13,3 +13,5 @@ links:
   - icon: brands/linkedin
     url: "https://www.linkedin.com/in/recep-nuri-citak/"
     label: "LinkedIn"
+cms:
+  avatar: /authors/recep-nuri-citak.jpg

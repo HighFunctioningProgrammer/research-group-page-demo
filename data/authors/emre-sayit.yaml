@@ -13,3 +13,5 @@ links:
   - icon: brands/linkedin
     url: "https://www.linkedin.com/in/emre-say%C4%B1t-a0435a213/"
     label: "LinkedIn"
+cms:
+  avatar: /authors/emre-sayit.jpg

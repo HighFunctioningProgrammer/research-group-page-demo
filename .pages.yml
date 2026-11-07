@@ -1,0 +1,336 @@
+# Hosted Pages CMS configuration. Access/branch protection are configured by
+# the repository owner, not here. See docs/CMS_SETUP.md before connecting.
+settings:
+  hide: true
+  content:
+    merge: true
+  commit:
+    identity: app
+
+media:
+  - name: images
+    label: Laboratory images
+    input: assets/media
+    # HugoBlox resolves these relative to assets/media, rather than static/.
+    output: /
+    extensions: [jpg, jpeg, png, webp]
+    rename: random
+  - name: documents
+    label: Publication PDFs
+    input: static/uploads/publications
+    output: uploads/publications
+    extensions: [pdf]
+    rename: random
+
+components:
+  web-address:
+    type: string
+    required: true
+    description: "Choose once, for example jane-doe. Use lowercase letters, numbers and hyphens. Do not change this after saving; ask a maintainer if a correction is needed."
+    pattern:
+      regex: '^[a-z0-9]+(?:-[a-z0-9]+)*$'
+      message: Use lowercase letters, numbers and single hyphens only.
+  description:
+    type: rich-text
+    options:
+      format: markdown
+      switcher: false
+      media: images
+  draft:
+    type: boolean
+    default: true
+    description: "Leave on while preparing this entry. Turn off when it is ready for reviewer approval. Saving never publishes directly."
+  page-links:
+    type: object
+    list: true
+    fields:
+      - name: type
+        label: Link kind
+        type: select
+        required: true
+        options:
+          values:
+            - {name: site, label: Website}
+            - {name: source, label: Publisher / source}
+            - {name: pdf, label: PDF web address}
+            - {name: code, label: Code}
+            - {name: dataset, label: Dataset}
+            - {name: video, label: Video}
+            - {name: slides, label: Slides}
+            - {name: preprint, label: Preprint}
+            - {name: custom, label: Other}
+      - name: url
+        label: Web address
+        type: string
+        required: true
+        pattern: {regex: '^https?://\S+$', message: 'Paste the full https:// web address.'}
+      - name: name
+        label: Button text
+        type: string
+      # Model the native optional attributes too: CMS replaces arrays on save.
+      - {name: label, type: string, hidden: true}
+      - {name: icon, type: string, hidden: true}
+      - {name: contexts, type: string, list: true, hidden: true}
+      - {name: rel, type: string, list: true, hidden: true}
+      - {name: id, type: string, hidden: true}
+      - {name: provider, type: string, hidden: true}
+
+content:
+  - name: people
+    label: Members and coauthors
+    type: collection
+    path: data/authors
+    format: yaml
+    subfolders: false
+    filename: {template: '{fields.slug}.yaml', field: false}
+    operations: {create: true, rename: false, delete: false}
+    view:
+      primary: name.display
+      fields: [name.display, role, user_groups]
+      search: [name.display, role]
+      sort: [name.display, role]
+      default: {sort: name.display, order: asc}
+    fields:
+      - name: slug
+        label: Web address (choose once)
+        component: web-address
+      - {name: schema, type: string, default: hugoblox/author/v1, hidden: true}
+      - {name: is_owner, type: boolean, default: false, hidden: true}
+      - name: name
+        label: Name
+        type: object
+        required: true
+        fields:
+          - {name: display, label: Full name, type: string, required: true}
+          - {name: given, label: Given name(s), type: string}
+          - {name: family, label: Family name, type: string}
+      - {name: role, label: Position or academic role, type: string}
+      - name: user_groups
+        label: Category
+        type: select
+        required: true
+        options:
+          multiple: true
+          min: 1
+          max: 1
+          values:
+            - {name: Professor, label: Professor}
+            - {name: Graduate Students, label: Graduate Student}
+            - {name: Undergraduate Students, label: Undergraduate Student}
+            - {name: Alumni, label: Alumni}
+            - {name: External co-authors, label: 'External coauthor (not on Members)'}
+        description: "To archive a former lab member, choose Alumni. External coauthors are only used for paper citations."
+      - name: cms
+        label: Photograph
+        type: object
+        fields:
+          - name: avatar
+            label: Photograph
+            type: image
+            options: {media: images, path: assets/media/authors}
+            description: Upload a clear portrait with space around the face; the site crops it to a square.
+      - name: bio
+        label: Biography
+        type: rich-text
+        options: {switcher: false, media: false}
+      - name: links
+        label: Email and social links
+        type: object
+        list: true
+        description: "Add one row per link. For Email, enter a normal email address; for other kinds paste the full https:// address."
+        fields:
+          - name: icon
+            label: Kind
+            type: select
+            required: true
+            options:
+              values:
+                - {name: at-symbol, label: Email}
+                - {name: brands/linkedin, label: LinkedIn}
+                - {name: academicons/google-scholar, label: Google Scholar}
+                - {name: hero/globe-alt, label: Personal website}
+                - {name: brands/github, label: GitHub}
+                - {name: hero/academic-cap, label: Faculty profile}
+                - {name: hero/link, label: Other website}
+          - {name: url, label: Email or web address, type: string, required: true}
+          - {name: label, label: Link description, type: string}
+      - name: weight
+        label: Display order
+        type: number
+        default: 100
+        description: Smaller numbers appear first within the category.
+
+  - name: projects
+    label: Projects
+    type: collection
+    path: content/projects
+    format: yaml-frontmatter
+    subfolders: true
+    exclude: [_index.md, '**/cite.bib']
+    filename: {template: '{fields.cms_slug}/index.md', field: false}
+    operations: {create: true, rename: false, delete: false}
+    view: {primary: title, fields: [title, draft, featured], sort: [weight, title], default: {sort: weight, order: asc}}
+    fields:
+      - {name: title, label: Project title, type: string, required: true}
+      - {name: cms_slug, label: Web address (choose once), component: web-address}
+      - {name: summary, label: Short summary, type: text, required: true}
+      - name: image
+        label: Featured image
+        type: object
+        fields:
+          - {name: filename, label: Image, type: image, options: {media: images}}
+          - {name: caption, label: Caption, type: string}
+      - name: body
+        label: Full description
+        component: description
+        description: Use the image button to add research images within the description. Add a short description for each image.
+      - {name: links, label: External links, component: page-links}
+      - name: publications
+        label: Related publications (optional priority order)
+        type: reference
+        list: true
+        options: {collection: publications, value: '{fields.cms_slug}', label: '{fields.title}'}
+        description: Papers linked to this project from Publications also appear automatically. These selected papers are shown first.
+      - {name: featured, label: Feature on homepage, type: boolean, default: false}
+      - {name: weight, label: Display order, type: number, default: 100, description: 'The homepage shows the first three featured projects, with smaller numbers first.'}
+      - {name: draft, label: Draft, component: draft}
+      - {name: show_date, type: boolean, default: false, hidden: true}
+      - {name: show_author, type: boolean, default: false, hidden: true}
+
+  - name: publications
+    label: Publications
+    type: collection
+    path: content/publications
+    format: yaml-frontmatter
+    subfolders: true
+    exclude: [_index.md, '**/cite.bib', '**/*.pdf']
+    filename: {template: '{fields.cms_slug}/index.md', field: false}
+    operations: {create: true, rename: false, delete: false}
+    view: {primary: title, fields: [title, date, draft], sort: [date, title], default: {sort: date, order: desc}}
+    fields:
+      - {name: title, label: Paper title, type: string, required: true}
+      - {name: cms_slug, label: Web address (choose once), component: web-address}
+      - name: authors
+        label: Authors (in publication order)
+        type: reference
+        list: {min: 1}
+        required: true
+        options: {collection: people, value: '{fields.slug}', label: '{fields.name.display}'}
+        description: Add every author in the exact published order. Create missing external coauthors in Members and coauthors first.
+      - name: date
+        label: Publication date
+        type: date
+        required: true
+        default: ''
+        options: {format: yyyy-MM-dd}
+        description: Use the verified publication date. Ask a maintainer if only the year is known; do not invent a day.
+      - name: publication_types
+        label: Publication kind
+        type: select
+        required: true
+        options:
+          multiple: true
+          min: 1
+          max: 1
+          values:
+            - {name: paper-conference, label: Conference paper}
+            - {name: article-journal, label: Journal article}
+            - {name: manuscript, label: Preprint / manuscript}
+            - {name: chapter, label: Book chapter}
+      - name: publication
+        label: Conference or journal
+        type: object
+        required: true
+        fields:
+          - {name: name, label: Full venue name, type: string, required: true}
+          - {name: pages, label: Pages, type: string}
+          - {name: publisher, label: Publisher, type: string}
+      - {name: abstract, label: Abstract, type: text}
+      - name: hugoblox
+        label: DOI
+        type: object
+        fields:
+          - name: ids
+            type: object
+            fields:
+              - name: doi
+                label: DOI
+                type: string
+                description: 'Enter the identifier, for example 10.1109/ICM66518.2025.11322489 (without https://doi.org/).'
+                pattern: {regex: '^10\.\d{4,9}/\S+$', message: 'Enter a DOI starting with 10., without the doi.org web address.'}
+      - {name: links, label: Publisher and other web links, component: page-links}
+      - name: cms
+        label: PDF document
+        type: object
+        fields:
+          - name: pdf
+            label: Upload PDF
+            type: file
+            options: {media: documents, extensions: [pdf]}
+            description: Only upload a version the lab has permission to share. For an external PDF, add a PDF web link above instead.
+      - name: bibtex
+        label: BibTeX citation
+        type: text
+        description: Paste the complete BibTeX citation exported by the publisher or Google Scholar. An existing citation file remains in use until you enter a replacement here.
+        pattern: {regex: '^\s*@\w+\s*[{(][\s\S]+', message: 'Paste a complete BibTeX entry beginning with @.'}
+      - name: projects
+        label: Related projects
+        type: reference
+        options: {collection: projects, multiple: true, value: '{fields.cms_slug}', label: '{fields.title}'}
+      - {name: body, label: Additional notes, component: description}
+      - {name: draft, label: Draft, component: draft}
+      - {name: profile, type: boolean, default: false, hidden: true}
+
+  - name: home
+    label: Homepage wording and photograph
+    type: file
+    path: data/site/home.yaml
+    format: yaml
+    operations: {delete: false, rename: false}
+    fields:
+      - {name: headline, label: Main headline, type: string, required: true}
+      - name: introduction
+        label: Laboratory introduction
+        type: rich-text
+        required: true
+        options: {switcher: false, media: false}
+      - {name: team_photo, label: Group photograph, type: image, required: true, options: {media: images}}
+      - {name: team_photo_alt, label: Photograph description, type: string, required: true}
+      - {name: research_heading, label: Research heading, type: string, required: true}
+      - {name: research_introduction, label: Research introduction, type: text, required: true}
+      - {name: neuronal_interfaces, label: Neuronal interfaces description, type: text, required: true}
+      - {name: peripheral_nerve_systems, label: Peripheral nerve systems description, type: text, required: true}
+      - {name: neuromorphic_hardware, label: Neuromorphic hardware description, type: text, required: true}
+
+  - name: contact
+    label: Contact information
+    type: file
+    path: data/site/contact.yaml
+    format: yaml
+    operations: {delete: false, rename: false}
+    fields:
+      - {name: person, label: Contact person, type: string, required: true}
+      - {name: role, label: Position, type: string, required: true}
+      - {name: email, label: Email, type: string, required: true, pattern: {regex: '^[^\s@]+@[^\s@]+\.[^\s@]+$', message: Enter a complete email address.}}
+      - {name: phone, label: Telephone, type: string}
+      - {name: address, label: Office and postal address (one line per row), type: string, list: {min: 1}, required: true}
+      - {name: source_url, label: Official source for these details, type: string, required: true, pattern: {regex: '^https://\S+$', message: Paste the official https:// web address.}}
+
+  - name: news
+    label: News (draft preparation only)
+    type: collection
+    path: content/news
+    format: yaml-frontmatter
+    subfolders: true
+    exclude: [_index.md]
+    filename: {template: '{fields.cms_slug}/index.md', field: false}
+    operations: {create: true, rename: false, delete: false}
+    view: {primary: title, fields: [title, date], sort: [date, title], default: {sort: date, order: desc}}
+    fields:
+      - {name: title, label: News title, type: string, required: true}
+      - {name: cms_slug, label: Web address (choose once), component: web-address}
+      - {name: date, label: Date, type: date, required: true, options: {format: yyyy-MM-dd}}
+      - {name: summary, label: Short summary, type: text}
+      - {name: body, label: Article, component: description}
+      - {name: draft, type: boolean, default: true, hidden: true, readonly: true}
+      - {name: type, type: string, default: post, hidden: true}

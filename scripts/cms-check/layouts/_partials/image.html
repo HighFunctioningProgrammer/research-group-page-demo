@@ -1,0 +1,8 @@
+{{- $path := strings.TrimPrefix "/" .path -}}
+{{- $exists := resources.Get (path.Join "media" $path) -}}
+{{- with .page -}}
+  {{- if .Resources.GetMatch $path -}}{{- $exists = true -}}{{- end -}}
+{{- end -}}
+{{- if or (not $exists) (findRE `(^/|\.\.)` $path) (not (findRE `(?i)\.(jpe?g|png|webp)$` $path)) -}}
+  {{- errorf "CMS: missing or unsupported image %s (%s)" $path .owner -}}
+{{- end -}}

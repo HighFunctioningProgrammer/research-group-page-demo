@@ -1,0 +1,9 @@
+headline: From Neuron Sensing to On-Chip Intelligence
+introduction: The **Integrated Circuits & Bio-Sensors Laboratory** at Middle East Technical University develops advanced neuron sensing and stimulation systems, mixed-signal front-end circuits, and neuromorphic computing hardware architectures.
+team_photo: /icbs-team-group.jpeg
+team_photo_alt: ICBS-LAB team at Middle East Technical University
+research_heading: Our research
+research_introduction: 'We work across integrated circuits, bio-sensors, and energy-aware computing:'
+neuronal_interfaces: electrical sensing, stimulation, and low-power mixed-signal interface circuits.
+peripheral_nerve_systems: microelectrode arrays for neuromonitoring and electrical stimulation of damaged peripheral nerves.
+neuromorphic_hardware: low-energy spiking neural network architectures using reinforcement learning for pattern recognition at the edge.
