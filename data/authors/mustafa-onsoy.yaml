@@ -13,3 +13,5 @@ links:
   - icon: brands/linkedin
     url: "https://www.linkedin.com/in/mustafa-%C3%B6-573aab244/"
     label: "LinkedIn"
+cms:
+  avatar: /authors/mustafa-onsoy.jpg

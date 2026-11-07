@@ -13,3 +13,5 @@ links:
   - icon: brands/linkedin
     url: "https://www.linkedin.com/in/umut-deniz-kapici/"
     label: "LinkedIn"
+cms:
+  avatar: /authors/umut-deniz-kapici.jpg

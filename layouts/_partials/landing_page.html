@@ -1,0 +1,28 @@
+{{/* Pinned Kit landing renderer, with safe CMS wording projected into native
+     blocks. data/site is the single source for editable home/contact text.
+     All layout, action and collection configuration stays in content/. */}}
+{{- $page := . -}}
+{{- $sections := partial "hbx/sections.html" . -}}
+{{- range $index, $block := $sections -}}
+  {{- $content := $block.content | default dict -}}
+  {{- if $page.IsHome -}}
+    {{- $home := hugo.Data.site.home -}}
+    {{- if eq $block.id "introduction" -}}
+      {{- $content = merge $content (dict "title" $home.headline "text" $home.introduction) -}}
+    {{- else if eq $block.id "research" -}}
+      {{- $text := printf "![%s](%s)\n\n## %s\n\n%s\n\n- **Neuronal interfaces:** %s\n- **Peripheral nerve systems:** %s\n- **Neuromorphic hardware:** %s" $home.team_photo_alt $home.team_photo $home.research_heading $home.research_introduction $home.neuronal_interfaces $home.peripheral_nerve_systems $home.neuromorphic_hardware -}}
+      {{- $content = merge $content (dict "text" $text) -}}
+    {{- end -}}
+  {{- else if eq $page.Section "contact" -}}
+    {{- $contact := hugo.Data.site.contact -}}
+    {{- if eq $block.id "contact-details" -}}
+      {{- $content = merge $content (dict "connect_title" (printf "%s · %s" $contact.person $contact.role) "address" (dict "lines" $contact.address) "email" $contact.email "phone" $contact.phone) -}}
+    {{- else if eq $block.id "contact-source" -}}
+      {{- $content = merge $content (dict "text" (printf "Contact details are listed in [METU's official faculty directory](%s)." $contact.source_url)) -}}
+    {{- end -}}
+  {{- end -}}
+  {{- $block = merge $block (dict "content" $content) -}}
+  {{- if or (not $block.demo) ($block.demo | and (eq (os.Getenv "HUGO_BLOX_DEMO") "true")) -}}
+    {{- partial "functions/parse_block_v3" (dict "page" $page "block" $block) -}}
+  {{- end -}}
+{{- end -}}

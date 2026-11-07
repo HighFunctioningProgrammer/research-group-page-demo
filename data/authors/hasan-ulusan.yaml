@@ -25,3 +25,5 @@ links:
   - icon: hero/academic-cap
     url: https://eee.metu.edu.tr/index.php/tr/personel/hasan-ulusan
     label: METU faculty profile
+cms:
+  avatar: /authors/hasan-ulusan.jpg

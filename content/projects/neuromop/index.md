@@ -1,4 +1,6 @@
 ---
+cms_slug: neuromop
+draft: false
 title: "NeuroMop"
 summary: "Neuron electrical sensing and stimulation through low-power mixed-signal ASICs and microelectrode arrays."
 weight: 1

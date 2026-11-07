@@ -1,0 +1,26 @@
+name: CMS content integrity
+on:
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  cms-content:
+    name: CMS content integrity
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '22'
+      - name: Read existing Hugo pin
+        id: hugo
+        run: |
+          node --input-type=module -e 'import fs from "node:fs"; const text = fs.readFileSync("hugoblox.yaml", "utf8"); const version = text.match(/hugo_version:\s*["\x27]?([0-9.]+)/)?.[1]; if (!version) throw Error("Missing Hugo pin"); fs.appendFileSync(process.env.GITHUB_OUTPUT, `version=${version}\n`);'
+      - uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: ${{ steps.hugo.outputs.version }}
+          extended: true
+      - name: Check content including drafts
+        run: node scripts/check-cms.mjs

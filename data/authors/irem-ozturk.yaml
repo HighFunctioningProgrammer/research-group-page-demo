@@ -13,3 +13,5 @@ links:
   - icon: brands/linkedin
     url: "https://www.linkedin.com/in/iremmozturk/"
     label: "LinkedIn"
+cms:
+  avatar: /authors/irem-ozturk.jpeg

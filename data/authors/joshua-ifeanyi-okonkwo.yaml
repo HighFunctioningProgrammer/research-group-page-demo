@@ -1,0 +1,7 @@
+schema: hugoblox/author/v1
+slug: joshua-ifeanyi-okonkwo
+is_owner: false
+name:
+  display: Joshua Ifeanyi Okonkwo
+user_groups:
+  - External co-authors

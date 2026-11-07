@@ -13,3 +13,5 @@ links:
   - icon: brands/linkedin
     url: "https://www.linkedin.com/in/emre-ant/"
     label: "LinkedIn"
+cms:
+  avatar: /authors/emre-ant.jpeg

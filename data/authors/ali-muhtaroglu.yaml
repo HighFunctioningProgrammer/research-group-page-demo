@@ -1,0 +1,7 @@
+schema: hugoblox/author/v1
+slug: ali-muhtaroglu
+is_owner: false
+name:
+  display: Ali Muhtaroglu
+user_groups:
+  - External co-authors
