@@ -34,6 +34,10 @@ The experimental system consists of four main components:
 3. **Power Management:** Dynamic adjustment of sampling frequency.
 4. **Communication:** Wireless transmission to a monitoring station.
 
+![](/icon.png)
+
+image in text example
+
 ## Expected Outcomes
 
 The project aims to demonstrate how adaptive sampling can reduce energy consumption while maintaining acceptable measurement quality.
